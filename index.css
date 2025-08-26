@@ -58,14 +58,18 @@ header {
 }
 
 .sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
     width: 0;
-    max-height: 100vh;
+    height: calc(100vh - 60px);
     background-color: var(--base-clr);
     border-right: 1px solid var(--line-clr);
     transition: width 0.3s ease;
     overflow: hidden;
     overflow-y: auto;
     flex-shrink: 0;
+    z-index: 999;
 }
 
 .sidebar.active {
@@ -90,11 +94,6 @@ header {
     cursor: pointer;
     border-bottom: 1px solid var(--line-clr);
     text-decoration: none;
-}
-
-.sidebar-btn a {
-    text-decoration: none;
-    color: white;
 }
 
 .sidebar-btn:hover {
@@ -181,9 +180,8 @@ body.sidebar-open {
 }
 
 .man-btn, .fin-btn, .tax-btn, .aud-btn, .inv-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
+    text-align: center;
     width: 100%;
     background-color: var(--base-clr);
     color: var(--text-clr);
@@ -192,6 +190,8 @@ body.sidebar-open {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 .man-btn a, .fin-btn a, .tax-btn a, .aud-btn a, .inv-btn a {
