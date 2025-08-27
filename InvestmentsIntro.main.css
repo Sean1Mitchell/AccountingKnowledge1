@@ -146,6 +146,63 @@ body.sidebar-open {
     padding: 15px;
 }
 
+.content-box-intro {
+    max-width: 100%;
+    margin: 20px auto;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.content-box-intro > ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 260px;
+}
+
+.content-box-inv {
+    max-width: 100%;
+    margin: 20px auto;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.content-box-inv p {
+    margin-bottom: 20px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.inv-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.inv-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.inv-btn:hover {
+    background-color: var(--accent-clr);
+}
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -153,6 +210,7 @@ h1 {
 
 h2 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -161,6 +219,7 @@ h3 {
 
 p {
     text-align: center;
+    margin-top: 10px;
 }
 
 .info-wrapper {
@@ -196,6 +255,11 @@ p {
 }
 
 @media (max-width: 820px) {
+    .inv-btn {
+        display: flex;
+        flex-direction: column;
+    }
+
     h1 {
         font-size: 24px;
     }
@@ -210,6 +274,7 @@ p {
 
     p {
         font-size: 14px;
+        margin-top: 10px;
     }
 }
 
@@ -228,10 +293,16 @@ p {
 
     p {
         font-size: 14px;
+        margin-top: 10px;
     }
 }
 
 @media (max-width: 771px) {
+    .button-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
     h1 {
         font-size: 24px;
     }
@@ -246,5 +317,6 @@ p {
 
     p {
         font-size: 14px;
+        margin-top: 10px;
     }
 }

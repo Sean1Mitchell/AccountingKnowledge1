@@ -51,4 +51,47 @@ document.addEventListener("DOMContentLoaded", () => {
             closeAllDropdowns();
         }
     });
+
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
+    const thumbnail = document.getElementById("thumbnail");
+    const closeBtn = document.querySelector(".close");
+
+    // Open modal + go full-screen
+    thumbnail.addEventListener("click", () => {
+        modal.classList.add("show");
+        modalImage.src = thumbnail.src;
+
+        // Request full-screen if supported
+        if (modal.requestFullscreen) {
+            modal.requestFullscreen();
+        } else if (modal.webkitRequestFullscreen) { // Safari
+            modal.webkitRequestFullscreen();
+        } else if (modal.msRequestFullscreen) { // IE11
+            modal.msRequestFullscreen();
+        }
+    });
+
+    // Close modal + exit full-screen
+    function closeModal() {
+        modal.classList.remove("show");
+
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
 });
