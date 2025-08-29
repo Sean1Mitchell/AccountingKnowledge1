@@ -125,7 +125,7 @@ body.sidebar-open {
 
 .main-content {
     flex: 1;
-    padding: 2rem;
+    padding: 20px;
     transition: margin-left 0.3s ease;
 }
 
@@ -200,7 +200,7 @@ p {
     text-align: center;
     border-collapse: collapse;
     table-layout: auto;
-    width: 25%;
+    width: 60%;
     font-size: 16px;
     margin: 0 auto;
 }
@@ -301,13 +301,11 @@ p {
 
 @media (max-width: 500px) {
 
-    /* Thumbnail image */
     #thumbnail {
-        width: 90%;       /* almost full width */
-        max-width: 300px;
+        width: 100%;
+        max-width: none;
     }
 
-    /* Modal content */
     .modal-content {
         max-width: 95vw;
         max-height: 95vh;
@@ -316,10 +314,20 @@ p {
     }
 
     .content-table {
-        width: 100%;       /* shrink to content */
-        margin: 0 auto;    /* center table */
-        font-size: 12px;   /* smaller text for mobile */
+        text-align: center;
+        border-collapse: collapse;
         table-layout: auto;
+        font-size: 14px;
+    }
+
+    .content-table thead tr {
+        background-color: var(--accent-clr);
+    }
+
+    .content-table th, .content-table td {
+        padding: 3px;
+        border: 1px solid var(--accent-clr);
+        white-space: normal;
     }
 
     h1 {
