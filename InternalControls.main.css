@@ -125,7 +125,7 @@ body.sidebar-open {
 
 .main-content {
     flex: 1;
-    padding: 2rem;
+    padding: 20px;
     transition: margin-left 0.3s ease;
 }
 
@@ -227,6 +227,10 @@ p {
     }
 
     p {
+        font-size: 14px;
+    }
+
+    ul {
         font-size: 14px;
     }
 }
